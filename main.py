@@ -30,7 +30,7 @@ with mp_hands.Hands(
     image = cv2.cvtColor(image, cv2.COLOR_RGB2BGR)
     if results.multi_hand_landmarks:
       for hand_landmarks in results.multi_hand_landmarks:
-        #Hole Zeigefingerkuppe Koordinaten und rechne diese in Pixel um
+        #Hole Zeigefingerkuppe Koordinaten und rechne diese in Pixel  um
         indextipX = (width * hand_landmarks.landmark[mp_hands.HandLandmark.INDEX_FINGER_TIP].x)
         indextipY = height - (height * hand_landmarks.landmark[mp_hands.HandLandmark.INDEX_FINGER_TIP].y) #Spiegle Y von oben zu unten auf unten nach oben
         indexstring = 'index: ' + str(indextipX)[:3] + " : " + str(indextipY)[:4] #Setze Ausgabe zusammen
